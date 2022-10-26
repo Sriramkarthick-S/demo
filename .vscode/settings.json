@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "fileone.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}
