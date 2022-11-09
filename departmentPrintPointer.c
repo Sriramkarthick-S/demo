@@ -9,11 +9,11 @@ typedef struct Student
     int fees;
 } Student;
 
-void ListStudents(Student *studentDetails1, char dept[])
+void ListStudents(Student *studentDetailsList, char dept[])
 {
-   if(!strcmp(studentDetails1->department, dept))
+   if(strcmp(studentDetailsList->department, dept) == 0)
    {
-      printf("Name(from dept '%s'):%s\n\n",dept, studentDetails1->name);
+      printf("Name(from dept '%s'):%s\n\n",dept, studentDetailsList->name);
    }
 }
 
