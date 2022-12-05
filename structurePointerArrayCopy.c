@@ -25,26 +25,25 @@ void main()
     for(int studentCount = 0; studentCount < totalNumberOfStudents; ++studentCount)
     {
     printf("Enter student %d name:\n", studentCount + 1);
-    scanf("%s", (studentHolder + studentCount)->name);
+    scanf("%s", student[studentCount].name);
 
     printf("Enter roll number:\n");
-    scanf("%d", &(studentHolder + studentCount)->rollNo);
+    scanf("%d", &student[studentCount].rollNo);
 
     printf("Enter department:\n");
-    scanf("%s",(studentHolder + studentCount)->department);
+    scanf("%s",student[studentCount].department);
 
     printf("Enter fees:\n");
-    scanf("%d", &(studentHolder + studentCount)->fees);
+    scanf("%d", &student[studentCount].fees);
     }
     char requiredDepartment[10];
 
     printf("Enter required department:");
     scanf("%s", requiredDepartment);
 
-
     for(int studentCount = 0; studentCount < totalNumberOfStudents; ++studentCount)
     {
-    (studentHolder + studentCount)->ListStudents = &ListStudents;
+    student[studentCount].ListStudents = &ListStudents;
     
     ListStudents(studentHolder, requiredDepartment, totalNumberOfStudents);
     }

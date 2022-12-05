@@ -19,7 +19,6 @@ void main()
     scanf("%d",&totalNumberOfStudents);
 
     Student student[totalNumberOfStudents];
-    Student *studentHolder = student;
 
     for(int studentCount = 0; studentCount < totalNumberOfStudents; ++studentCount)
     {
@@ -36,12 +35,13 @@ void main()
     scanf("%d", &student[studentCount].fees);
     }
 
+     student.PrintStudentFees = &PrintStudentFees;
+
     for(int studentCount = 0; studentCount < totalNumberOfStudents; ++studentCount)
     {
-    student[studentCount].PrintStudentFees = &PrintStudentFees;
-    
-    printf("%s's fees: ", student[studentCount].name);
-    student[studentCount].PrintStudentFees(student[studentCount].fees);
+        
+        printf("%s's fees: ", student[studentCount].name);
+        student[studentCount].PrintStudentFees(student[studentCount].fees);
     }
 }
 
